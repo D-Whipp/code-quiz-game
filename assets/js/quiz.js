@@ -1,4 +1,7 @@
-
+var questionEl = document.querySelector(".question");
+var startBtnEl = document.querySelector("#start-btn");
+var nextBtnEl = document.querySelector("#next-btn");
+var answerBtnsEl = document.querySelector(".answer-buttons");
 
 // use array to story questions
 var questionArr = [
@@ -19,3 +22,12 @@ var questionArr = [
     answer: "false",
   },
 ];
+
+function startGame() {
+  console.log("Started!");
+  startBtnEl.classList.add("hide");
+  answerBtnsEl.classList.remove("hide");
+  nextBtnEl.classList.remove("hide");
+}
+
+startBtnEl.addEventListener("click", startGame);
