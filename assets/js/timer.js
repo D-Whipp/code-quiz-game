@@ -1,5 +1,6 @@
 var timerEl = document.querySelector(".time-left");
 var notifyHeadingEl = document.querySelector(".notify-h3");
+var notifyAnswerEl = document.querySelector(".notify-answer");
 var startBtnEl = document.querySelector(".start-btn");
 
 // Timer counting down from 100 seconds
@@ -13,6 +14,7 @@ function countdown() {
     }
     if (timeLeft === 0) {
       timerEl.textContent = "Time's up!";
+      notifyAnswerEl.classList.remove("hide");
       notifyHeadingEl.textContent = "Game Over!";
       clearInterval(timeInterval);
     }
