@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
+    <div class="info">
+      <div class="hi-score"><h2>View high scores</h2></div>
+      <div class="time-left"><h2>Timer</h2></div>
+    </div>
     <div class="container">
-      <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-          <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button>
+      <div class="question-container">
+        <div class="question">Welcome to my Quiz!</div>
+        <div class="answer-buttons hide">
+          <button class="btn true-btn">True</button>
+          <button class="btn">False</button>
         </div>
       </div>
       <div class="controls">
@@ -23,6 +25,10 @@
         <button id="next-btn" class="next-btn btn hide">Next</button>
       </div>
     </div>
-    <script src="./assets/js/script.js"></script>
+    <div class="notify-answer">
+      <h3 class="notify-h3"></h3>
+    </div>
+    <script src="./assets/js/timer.js"></script>
+    <script src="./assets/js/quiz.js"></script>
   </body>
 </html>
