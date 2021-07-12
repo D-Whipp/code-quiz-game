@@ -21,9 +21,21 @@ function startGame() {
   startBtnEl.classList.add("hide");
   answerBtnsEl.classList.remove("hide");
   nextBtnEl.classList.remove("hide");
-  answerHandler();
+  questionEl.innerText = questionArr[1].q;
 }
 
-var answerHandler = function () {};
+var answerHandler = function (e) {
+  var answer = e.target.innerText;
+  answer = answer.toLowerCase();
+  console.log(answer);
+  return answer;
+};
 
+var nextQuestion = function () {
+  
+};
+
+trueBtn.addEventListener("click", answerHandler);
+falseBtn.addEventListener("click", answerHandler);
+nextBtnEl.addEventListener("click", nextQuestion);
 startBtnEl.addEventListener("click", startGame);
