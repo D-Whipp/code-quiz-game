@@ -1,79 +1,80 @@
-:root {
-  --color-white: #fff;
-  --color-black: #000;
-  --color-purple: #540069;
-  --color-dark-purple: #230052;
-  --color-pink: #f700ff;
-}
-
 * {
   box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+body {
+  --hue: var(--hue-neutral);
   margin: 0;
   padding: 0;
-}
-
-/* center quiz */
-body {
-  background-color: #e2e1e1;
   display: flex;
+  width: 100vw;
   height: 100vh;
-  width: 100vw;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue-neutral), 100%, 20%);
 }
 
-/* style high score and time left */
-.info {
-  display: flex;
-  justify-content: space-between;
-  padding: 2%;
-  position: fixed;
-  top: 0;
-  width: 100vw;
+body.correct {
+  --hue: var(--hue-correct);
 }
 
-/* style quiz question */
-.question {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 10px;
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
 }
 
-.answer-buttons {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .btn {
-  background-color: var(--color-purple);
-  border: 3px solid var(--color-dark-purple);
-  border-radius: 10px;
-  color: var(--color-white);
-  font-weight: bold;
-  margin: 3px;
-  padding: 10px 5px;
+  --hue: var(--hue-neutral);
+  border: 1px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
 }
 
 .btn:hover {
-  background-color: var(--color-pink);
+  border-color: black;
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+}
+
+.start-btn,
+.next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
 .controls {
-  margin: 25px 0;
-}
-
-.notify-answer {
-  position: absolute;
-  bottom: 28%;
-  font-size: 24px;
-  opacity: 70%;
-  width: 500px;
-  text-align: center;
-}
-
-.notify-answer .notify-h3 {
-  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hide {
