@@ -4,7 +4,7 @@ var startBtnEl = document.querySelector(".start-btn");
 
 // Timer counting down from 100 seconds
 function countdown() {
-  var timeLeft = 3;
+  var timeLeft = 5;
 
   var timeInterval = setInterval(function () {
     timeLeft--;

@@ -3,6 +3,7 @@
   --color-black: #000;
   --color-purple: #540069;
   --color-dark-purple: #230052;
+  --color-pink: #f700ff;
 }
 
 * {
@@ -54,12 +55,15 @@ body {
   padding: 10px 5px;
 }
 
+.btn:hover {
+  background-color: var(--color-pink);
+}
+
 .controls {
   margin: 25px 0;
 }
 
 .notify-answer {
-  border-top: 3px solid rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 28%;
   font-size: 24px;
