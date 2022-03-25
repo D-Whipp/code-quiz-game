@@ -1,54 +1,43 @@
-var questionEl = document.querySelector(".question");
-var answerBtnsEl = document.querySelector(".answer-buttons");
-var startBtnEl = document.querySelector("#start-btn");
-var nextBtnEl = document.querySelector("#next-btn");
-var trueBtnEl = document.querySelector(".true-btn");
-var falseBtnEl = document.querySelector(".false-btn");
-var notifyHeadingEl = document.querySelector(".notify-h3");
+const quizContainer = document.getElementById("quiz");
+const resultsContainer = document.getElementById("results");
+const submitButton = document.getElementById("submit");
 
-var score = 0;
-var currentIndex = 0;
+function buildQuiz() {}
 
-// use array to story questions
-var questionArr = [
-  { q: "CSS stands for Cannot Stop Styling.", a: "false" },
-  { q: "CSS stands for Cascading Style Sheets.", a: "true" },
-  { q: "JavaScript cannot interact with HTML", a: "false" },
-  { q: "HTML lacks style.", a: "true" },
-  { q: "HTML lacks structure", a: "false" },
+function showResults() {}
+
+// display quiz right away
+buildQuiz();
+
+// on submit, show results
+submitButton.addEventListener("click", showResults);
+
+const myQuestions = [
+  {
+    question: "Who invented JavaScript?",
+    answers: {
+      a: "Douglas Crockford",
+      b: "Sheryl Sandberg",
+      c: "Brendan Eich",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "Which one of these is a JavaScript package manager?",
+    answers: {
+      a: "Node.js",
+      b: "TypeScript",
+      c: "npm",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "Which tool can you use to ensure code quality?",
+    answers: {
+      a: "Angular",
+      b: "jQuery",
+      c: "ESLint",
+    },
+    correctAnswer: "c",
+  },
 ];
-
-function startGame() {
-  startBtnEl.classList.add("hide");
-  answerBtnsEl.classList.remove("hide");
-  nextBtnEl.classList.remove("hide");
-  displayQuestion(currentIndex);
-}
-
-var answerHandler = function (e) {
-  var answer = e.target.innerText.toLowerCase();
-  console.log(answer);
-  displayQuestion(answer);
-};
-
-var displayQuestion = function (a) {
-  answer = a;
-  var currentQuestion = questionArr[currentIndex].q;
-  console.log(currentQuestion);
-  questionEl.innerText = currentQuestion;
-
-  if (answer === questionArr[currentIndex].a) {
-    console.log("correct");
-  } else {
-    console.log("wrong");
-  }
-  currentIndex++;
-  displayQuestion();
-};
-
-// var nextQuestion = function (answer) {};
-
-trueBtnEl.addEventListener("click", answerHandler);
-falseBtnEl.addEventListener("click", answerHandler);
-// nextBtnEl.addEventListener("click", nextQuestion);
-startBtnEl.addEventListener("click", startGame);
